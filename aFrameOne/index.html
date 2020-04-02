@@ -24,6 +24,7 @@
         <a-assets>
 
           <!-- supa dank photos at https://www.solarsystemscope.com/textures/ -->
+          <!-- vr objects downloaded off https://poly.google.com/ -->
           <img id="earth" src="earth.jpg">
           <img id="moon" src="moon.jpg">
 
@@ -44,10 +45,29 @@
           <img id="sky" src="sky.jpg">
           <img id="sun" src="sun.jpg">
 
+          <img id="satOne" src="Satellite_BaseColor.png">
 
+          <a-asset-item id="gallery-obj" src="model.obj"></a-asset-item>
+          <a-asset-item id="gallery-mtl" src="materials.mtl"></a-asset-item>
+
+          <a-asset-item id="gallery-obj2" src="Satellite.obj"></a-asset-item>
+          <a-asset-item id="gallery-mtl2" src="Satellite.mtl"></a-asset-item>
+
+          <a-asset-item id="gallery-obj3" src="satTwo.obj"></a-asset-item>
+          <a-asset-item id="gallery-mtl3" src="satTwo.mtl"></a-asset-item>
+
+          <a-asset-item id="alienObj" src="Alien.obj"></a-asset-item>
+          <a-asset-item id="alienMtl" src="Alien.mtl"></a-asset-item>
+
+          <a-asset-item id="astroObj" src="Astronaut.obj"></a-asset-item>
+          <a-asset-item id="astroMtl" src="Astronaut.mtl"></a-asset-item>
+
+          <a-asset-item id="rockObj" src="rocket.obj"></a-asset-item>
+          <a-asset-item id="rockMtl" src="rocket.mtl"></a-asset-item>
+
+          <a-asset-item id="sauceObj" src="sauce.obj"></a-asset-item>
+          <a-asset-item id="sauceMtl" src="sauce.mtl"></a-asset-item>
         </a-assets>
-        <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere> -->
-        <!-- <a-sphere src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg" position="0 1.25 -5" radius="1.25"></a-sphere> -->
         <a-sphere material="src: #sun;" position="0 0 125" radius="70";></a-sphere>
 
         <a-sphere material="src: #earth;" position="0 1.25 -5" radius="1.25"></a-sphere>
@@ -55,27 +75,41 @@
           <a-sphere material="src: #moon;" position="-3.004 1.223 1.631" radius=".31"></a-sphere>
         </a-entity>
 
-
         <a-sphere material="src: #saturn;" rotation="25.280 0.000 12.730" position="29.212 3.586 -7.049" radius="10";></a-sphere>
         <a-ring radius-inner="12.000" radius-outer="17.000" transparent="true" side="double" position="28.647 4.077 -7.154" rotation="-62.720 -34.050 0.000" src="#rings"></a-ring>
         <a-sphere material="src: #titan;" position="20.860 1.380 1.750" radius=".5";></a-sphere>
 
-        <a-sphere material="src: #mercury;" position="8.257 0.922 10.041" radius=".4";></a-sphere>
+        <a-sphere material="src: #mercury;" position="8.257 1.073 10.041" radius=".4";></a-sphere>
 
         <a-sphere material="src: #venus;" position="-7.728 -0.607 6.920" radius="1.2";></a-sphere>
 
         <a-sphere material="src: #mars;" position="-8.185 2.214 -11.678" radius=".75";></a-sphere>
 
-        <a-sphere material="src: #jupiter;" position="-31.624 9.414 -15.169" radius="12";></a-sphere>
+        <a-sphere material="src: #jupiter;" position="-31.624 9.414 -15.169" radius="12" animation="property: rotation; to: 0 360 0; loop: true; dur: 60000; easing: linear;"></a-sphere>
         <a-sphere material="src: #europa;" position="-28.868 4.480 -2.354" radius=".2";></a-sphere>
         <a-sphere material="src: #callisto;" position="-19.721 6.283 -8.041" radius=".4";></a-sphere>
         <a-sphere material="src: #io;" position="-25.796 1.263 -6.123" radius=".6";></a-sphere>
         <a-sphere material="src: #ganymede;" position="-28.199 10.636 -2.024" radius=".75";></a-sphere>
 
-
-        <a-sphere material="src: #uranus;" position="-47.176 -2.751 16.654" radius="5";></a-sphere>
+        <a-sphere material="src: #uranus;" position="-47.176 -2.751 20.840" radius="5";></a-sphere>
 
         <a-sphere material="src: #neptune;" position="42.125 7.218 30.069" radius="5";></a-sphere>
+
+        <a-entity obj-model="obj: #gallery-obj; mtl: #gallery-mtl" scale="0.2 0.2 0.2" position="-75 1.018 14.628" rotation="0 90 0" animation="property: position; to: 75 1.018 14.628; dur: 20000; easing: linear; loop: true"></a-entity>
+
+        <a-entity rotation="0 0 0" position="0 1.179 -5.111" animation="property: rotation; to: 0 0 360; loop: true; dur: 20000; easing: linear;">
+          <a-entity obj-model="obj: #gallery-obj2; mtl: #gallery-mtl2" scale="0.02 0.02 0.02" rotation="0 90 0" position="0 1.75 0" material="src: #satOne;"></a-entity>
+        </a-entity>
+
+
+        <a-entity rotation="0 0 0" position="-8.186 2.223 -11.674" animation="property: rotation; to: 360 0 0; loop: true; dur: 20000; easing: linear;">
+          <a-entity obj-model="obj: #gallery-obj3; mtl: #gallery-mtl3" scale="0.005 0.005 0.005" position="0.002 -1.284 -0.231"></a-entity>
+        </a-entity>
+
+        <a-entity obj-model="obj: #alienObj; mtl: #alienMtl" scale="0.015 0.015 0.015" position="8.258 1.450 10.144" rotation="0 160 0"></a-entity>
+        <a-entity obj-model="obj: #astroObj; mtl: #astroMtl" scale="0.05 0.05 0.05" position="8.314 1.453 9.941" rotation="0 -20 0"></a-entity>
+        <a-entity obj-model="obj: #rockObj; mtl: #rockMtl" scale="0.5 0.5 0.5" position="8.265 1.145 9.577" rotation="270.000 0 0"></a-entity>
+        <a-entity obj-model="obj: #sauceObj; mtl: #sauceMtl" scale="0.3 0.3 0.3" position="7.910 1.142 10.450" rotation="86.000 -30.000 0.000"></a-entity>
 
         <!-- <a-sky color="black"></a-sky> -->
         <a-sky src="#sky"></a-sky>
@@ -97,11 +131,14 @@
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149765325-2"></script>
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-149765325-2');
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
